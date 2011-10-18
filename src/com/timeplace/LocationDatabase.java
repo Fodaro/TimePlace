@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-import android.app.AlertDialog;
+import org.osmdroid.util.GeoPoint;
 
-import com.google.android.maps.GeoPoint;
+import android.app.AlertDialog;
 
 public class LocationDatabase extends ArrayList<PointOfInterest> {
 

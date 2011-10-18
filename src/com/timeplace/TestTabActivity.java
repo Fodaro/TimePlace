@@ -1,7 +1,5 @@
 package com.timeplace;
 
-import com.google.android.maps.GeoPoint;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;

@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.google.android.maps.*;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.*;
+import org.osmdroid.views.overlay.*;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -14,7 +17,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
-public class MapViewActivity extends MapActivity {
+public class MapViewActivity extends Activity {
     /** Called when the activity is first created. */
 	private ArrayList<Task> tasks;
 	
@@ -24,7 +27,7 @@ public class MapViewActivity extends MapActivity {
 	private LocationManager locationManager;
 	private LocationDatabase locDb;
 	private boolean haveLocation = false;
-	private MapViewOverlay itemizedOverlay;
+	private ItemizedIconOverlay itemizedOverlay;
 	private List<Overlay> mapOverlays;
 	
     @Override
@@ -47,7 +50,7 @@ public class MapViewActivity extends MapActivity {
 		// Overlays
 		mapOverlays = mapView.getOverlays();
 		Drawable drawable = this.getResources().getDrawable(R.drawable.androidmarker);
-		itemizedOverlay = new MapViewOverlay(drawable, this);
+		itemizedOverlay = new ItemizedIconOverlay(drawable, this);
     }
     
     public class GeoUpdateHandler implements LocationListener {

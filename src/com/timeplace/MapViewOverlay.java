@@ -2,6 +2,9 @@ package com.timeplace;
 
 import java.util.ArrayList;
 
+import org.osmdroid.views.overlay.ItemizedOverlayControlView;
+import org.osmdroid.views.overlay.Overlay;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,9 +12,9 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.ItemizedOverlay;
 import com.google.android.maps.OverlayItem;
 
-public class MapViewOverlay extends ItemizedOverlay {
+public class MapViewOverlay extends ItemizedOverlayControlView {
 
-	private ArrayList<OverlayItem> overlays = new ArrayList<OverlayItem>();
+	private ArrayList<Overlay> overlays = new ArrayList<Overlay>();
 	private Context context;
 
 	public MapViewOverlay(Drawable defaultMarker) {
@@ -23,7 +26,7 @@ public class MapViewOverlay extends ItemizedOverlay {
 		this.context = context;
 	}
 	
-	public void addOverlay(OverlayItem overlay) {
+	public void addOverlay(Overlay overlay) {
 	    overlays.add(overlay);
 	    populate();
 	}

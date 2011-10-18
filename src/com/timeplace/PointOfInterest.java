@@ -1,8 +1,8 @@
 package com.timeplace;
 
-import android.text.format.Time;
+import org.osmdroid.util.GeoPoint;
 
-import com.google.android.maps.GeoPoint;
+import android.text.format.Time;
 
 public class PointOfInterest extends GeoPoint {
 	
