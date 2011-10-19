@@ -20,7 +20,7 @@ public class NotificationService extends Service {
 
 	private Timer timer;
 	private NotificationManager nm;
-	private int icon = R.drawable.icon;
+	private int icon = R.drawable.notification_icon;
 	private Context context;
 	private Intent intent;
 	private Notification notification;
@@ -32,7 +32,7 @@ public class NotificationService extends Service {
 		public void run() {
 			Log.i(TAG, "Timer task doing work");
 			num++;
-			notification.setLatestEventInfo(context, "Hello World! " + num, "Need to post something?", contentIntent);
+			notification.setLatestEventInfo(context, "ToDoMe: Buy stamps", "Here's a post office!", contentIntent);
 			nm.notify(1, notification);
 		}
 	};
@@ -49,9 +49,9 @@ public class NotificationService extends Service {
 
 		// Notification example from http://developer.android.com/guide/topics/ui/notifiers/notifications.html
 		timer = new Timer("TimePlaceNotificationTimer");
-		timer.schedule(updateTask, 1000L, 60 * 1000L);
+		timer.schedule(updateTask, 10 * 1000L, 60 * 1000L);
 		nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-		notification = new Notification(icon, "Hello there!", System.currentTimeMillis());
+		notification = new Notification(icon, "ToDoMe: Buy stamps", System.currentTimeMillis());
 		notification.defaults |= Notification.DEFAULT_SOUND;		// Adds sound
 		//notification.defaults |= Notification.DEFAULT_VIBRATE;	// TODO stop this line from crashing the program
 		intent = new Intent(this, TodoActivity.class);

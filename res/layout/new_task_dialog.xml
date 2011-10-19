@@ -23,8 +23,8 @@
     <TextView android:text="@string/notes" android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_width="wrap_content"></TextView>
     <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:inputType="textMultiLine" android:id="@+id/notesEntry" android:layout_weight="0.23" android:maxLines="5">
     </EditText>
-    <TextView android:text="@string/specific_location" android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_width="wrap_content"></TextView>
-    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/postcodeEntry"></EditText>
+    <TextView android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_width="wrap_content" android:text="@string/time"></TextView>
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/editText1" android:inputType="time"></EditText>
     <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:layout_width="match_parent">
         <Button android:id="@+id/okButton" android:layout_height="wrap_content" android:text="@string/save" android:layout_width="148dp"></Button>
         <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/completeButton" android:text="@string/mark_complete"></Button>

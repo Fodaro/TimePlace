@@ -111,11 +111,11 @@ public class TodoActivity extends Activity {
 		EditText	taskNameEntry	= (EditText) dialog.findViewById(R.id.taskNameEntry);
 		RatingBar	ratingEntry		= (RatingBar) dialog.findViewById(R.id.ratingEntry);
 		EditText	notesEntry		= (EditText) dialog.findViewById(R.id.notesEntry);
-		EditText	postcodeEntry	= (EditText) dialog.findViewById(R.id.postcodeEntry);
+		//EditText	postcodeEntry	= (EditText) dialog.findViewById(R.id.postcodeEntry);
 		
 		Task task = new Task(taskNameEntry.getText().toString(),
 							notesEntry.getText().toString(),
-							postcodeEntry.getText().toString(),
+							"", //postcodeEntry.getText().toString(),
 							(int)ratingEntry.getRating());
 		
 		tasks.add(tasks.size() - 1, task);
@@ -123,7 +123,6 @@ public class TodoActivity extends Activity {
 		taskAdapter.notifyDataSetChanged();
 		String type = TimePlaceActivity.keywords.getType(task.getName());
 		task.setType(type);
-		message("", type);
 	}
 	
 	private void message(String title, String message) {
