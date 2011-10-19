@@ -28,10 +28,14 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.ContentProvider;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationListener;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -48,11 +52,6 @@ import android.util.Log;
 
 public class ToDoMeService extends Service implements LocationListener {
 
-	// Data
-	public static LocationDatabase pointsOfInterest = new LocationDatabase();
-	public static KeywordDatabase keywords = new KeywordDatabase();
-	public static ArrayList<Task> tasks = new ArrayList<Task>();
-
 	public static boolean running = false;
 
 	private static final String TAG = "ToDoMe-" + Service.class.getSimpleName();
@@ -67,6 +66,8 @@ public class ToDoMeService extends Service implements LocationListener {
 	private Notification notification;
 	private PendingIntent contentIntent;
 	private String name;
+	
+
 
 	Location userCurrentLocation;
 
