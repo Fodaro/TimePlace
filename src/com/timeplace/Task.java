@@ -1,10 +1,13 @@
 package com.timeplace;
 
-public class Task {	
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Task implements Serializable {	
 	private String name;
 	private String notes;
 	private String postcode;
-	private String type;
+	private ArrayList<String> types;
 	
 	private boolean complete; 
 	private int rating;
@@ -29,10 +32,11 @@ public class Task {
 	public void setNotes(String notes) { this.notes = notes; }
 	public String getPostcode() { return postcode; }
 	public void setPostcode(String postcode) { this.postcode = postcode; }
-	public String getType() { return type; }
-	public void setType(String type) { this.type = type; }
+	public ArrayList<String> getTypes() { return types; }
+	public void setTypes(ArrayList<String> types) { this.types = types; }
 	public boolean isComplete() { return complete; }
 	public void setComplete(boolean complete) { this.complete = complete; }
 	public int getRating() { return rating; }
 	public void setRating(int rating) { this.rating = rating; }
+
 }

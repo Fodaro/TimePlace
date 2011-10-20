@@ -1,28 +1,34 @@
 package com.timeplace;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class KeywordDatabase {
+public class KeywordDatabase implements Serializable {
 
 	ArrayList<Keyword> keywords = new ArrayList<Keyword>();
 
 	public KeywordDatabase() {
 		keywords.add(new Keyword("post", "postbox"));
+		keywords.add(new Keyword("letter", "postbox"));
+		keywords.add(new Keyword("stamp", "post office"));
+		keywords.add(new Keyword("withdraw", "bank"));
+		keywords.add(new Keyword("money", "bank"));
+		keywords.add(new Keyword("train", "train station"));
 	}
 	
 	public int size() {
 		return keywords.size();
 	}
 	
-	public String getType(String name) {
-		String keyword = null;
+	public ArrayList<String> getTypes(String name) {
+		ArrayList<String> types = new ArrayList<String>();
 		String lowerName = name.toLowerCase();
 		for (Iterator<Keyword> iter = keywords.iterator(); iter.hasNext();) {
 			Keyword keywordObj = iter.next();
 			if (lowerName.contains(keywordObj.keyword))
 			{
-				keyword = keywordObj.type;
+				types.add(keywordObj.type);
 			}
 		}
 		/*String[] words = name.split(" ");
@@ -37,7 +43,7 @@ public class KeywordDatabase {
 			}
 		}*/
 
-		return keyword;
+		return types;
 	}
 
 	private class Keyword {

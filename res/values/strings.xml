@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, TimePlaceActivity!</string>
-    <string name="app_name">TimePlace</string>
-    <string name="name">Task:</string>
-    <string name="notes">Notes:</string>
-    <string name="save">Save</string>
-    <string name="mark_complete">Mark complete</string>
-    <string name="ready">Ready</string>
-    <string name="local_service_started">Local service started</string>
-    <string name="local_service_stopped">Local service stopped</string>
-    <string name="local_service_label">Local service label</string>
-    <string name="time">Time (optional):</string>
+	<string name="hello">Hello World, TimePlaceActivity!</string>
+	<string name="app_name">TimePlace</string>
+	<string name="name">Task:</string>
+	<string name="notes">Notes:</string>
+	<string name="save">Save</string>
+	<string name="mark_complete">Mark complete</string>
+	<string name="ready">Ready</string>
+	<string name="local_service_started">Local service started</string>
+	<string name="local_service_stopped">Local service stopped</string>
+	<string name="local_service_label">Local service label</string>
+	<string name="time">Time (optional):</string>
+	<string name="service_started">Service started</string>
+	<string name="service_stopped">Service stopped</string>
+	<string name="service_label">Service label</string>
+	<string name="specific_location">Postcode (optional):</string>
 </resources>

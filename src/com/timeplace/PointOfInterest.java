@@ -1,46 +1,43 @@
 package com.timeplace;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import android.location.Location;
 import android.text.format.Time;
 
 import com.google.android.maps.GeoPoint;
 
-public class PointOfInterest extends GeoPoint {
+public class PointOfInterest extends GeoPoint implements Serializable {
 	
-	final String locationType;
-	final String name;
+	final ArrayList<String> locationTypes;
+	final double radiusOfEffect;
 	
-	final Time openingTime;
-	final Time closingTime;
+	final Time[] openingTimes;
+	final Time[] closingTimes;
 	
-	final String postcode;
-	
-	public String getLocationType() {
-		return locationType;
+	public ArrayList<String> getLocationTypes() {
+		return locationTypes;
 	}
 
-	public String getName() {
-		return name;
+	public double getRadiusOfEffect() {
+		return radiusOfEffect;
 	}
 
-	public Time getOpeningTime() {
-		return openingTime;
+	public Time[] getOpeningTimes() {
+		return openingTimes;
 	}
 
-	public Time getClosingTime() {
-		return closingTime;
+	public Time[] getClosingTimes() {
+		return closingTimes;
 	}
 
-	public String getPostcode() {
-		return postcode;
-	}
-
-	public PointOfInterest(String postcode, int latitude, int longitude, Time openingTime, Time closingTime, String name, String type) {
-		super(latitude, longitude);
-		this.locationType = type;
-		this.name = name;
-		this.closingTime = closingTime;
-		this.openingTime = openingTime;
-		this.postcode = postcode; 
+	public PointOfInterest(int latitude, int longitude, ArrayList<String> locationTypes, Time[] openingTimes, Time[] closingTimes, double radiusOfEffect) {
+		super(latitude,longitude);
+		this.locationTypes = locationTypes;
+		this.openingTimes = openingTimes;
+		this.closingTimes = closingTimes;
+		this.radiusOfEffect = radiusOfEffect;
 	}
 }
 
