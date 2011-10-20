@@ -73,8 +73,10 @@ public class MapViewActivity extends MapActivity {
 						}
 	    			}
 	    		}
-				
-				mapOverlays.add(itemizedOverlay);
+	    		
+	    		OverlayItem overlayitem = new OverlayItem(new GeoPoint(50950300,-1363400), "Train station", "Southampton Airport Parkway");
+	    		mapOverlays.add(itemizedOverlay);
+	    		itemizedOverlay.addOverlay(overlayitem);
 	    	}
 	    	catch (Exception ex)
 	    	{

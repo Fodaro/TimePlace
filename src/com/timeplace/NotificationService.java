@@ -32,7 +32,7 @@ public class NotificationService extends Service {
 		public void run() {
 			Log.i(TAG, "Timer task doing work");
 			num++;
-			notification.setLatestEventInfo(context, "ToDoMe: Buy stamps", "Here's a post office!", contentIntent);
+			notification.setLatestEventInfo(context, "ToDoMe: Post letter", "Here's a post box!", contentIntent);
 			nm.notify(1, notification);
 		}
 	};
@@ -51,7 +51,7 @@ public class NotificationService extends Service {
 		timer = new Timer("TimePlaceNotificationTimer");
 		timer.schedule(updateTask, 10 * 1000L, 60 * 1000L);
 		nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-		notification = new Notification(icon, "ToDoMe: Buy stamps", System.currentTimeMillis());
+		notification = new Notification(icon, "ToDoMe: Post letter", System.currentTimeMillis());
 		notification.defaults |= Notification.DEFAULT_SOUND;		// Adds sound
 		//notification.defaults |= Notification.DEFAULT_VIBRATE;	// TODO stop this line from crashing the program
 		intent = new Intent(this, TodoActivity.class);

@@ -41,9 +41,9 @@ public class TimePlaceActivity extends TabActivity {
 			spec = tabHost.newTabSpec("map").setIndicator("Map", res.getDrawable(R.drawable.ic_tab_map)).setContent(intent);
 			tabHost.addTab(spec);
 			
-			/*intent = new Intent().setClass(this, TestTabActivity.class);
+			intent = new Intent().setClass(this, TestTabActivity.class);
 			spec = tabHost.newTabSpec("map").setIndicator("Test", res.getDrawable(R.drawable.ic_tab_map)).setContent(intent);
-			tabHost.addTab(spec);*/
+			tabHost.addTab(spec);
 
 			tabHost.setCurrentTab(0);
 
